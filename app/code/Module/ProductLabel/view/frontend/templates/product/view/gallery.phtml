@@ -1,0 +1,18 @@
+<?php
+$productLabelHelper = $this->helper(Module\ProductLabel\Helper\ProductLabelHelper::class);
+$_product = $productLabelHelper->getProduct();
+$productLabelAttributes = explode(',', $productLabelHelper->getProductLabelSelect($_product));
+?>
+<div class="product-label">
+    <?php
+        foreach ($productLabelAttributes as $attribute) {
+            if ($attribute == 'free_shipping') {
+                echo '<div class="label green"><span><strong>' . $productLabelHelper->getFrontendValue($attribute) . '</strong></span></div>';
+            }elseif ($attribute == 'best_seller'){
+                echo '<div class="label blue"><span><strong>' . $productLabelHelper->getFrontendValue($attribute) . '</strong></span></div>';
+            }elseif($attribute == 'sale'){
+                echo '<div class="label red"><span><strong>' . $productLabelHelper->getFrontendValue($attribute) . '</strong></span></div>';
+            }
+        }
+    ?>
+</div>

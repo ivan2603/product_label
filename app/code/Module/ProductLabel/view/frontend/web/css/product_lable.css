@@ -1,0 +1,20 @@
+.label {
+	margin: 3px;
+	color: white;
+	padding: 0 3px;
+	text-align: center;
+	border-radius: 5px;
+}
+.green {
+	background-color: green;
+}
+.blue {
+	background-color: blue;
+}
+.red {
+	background-color: red;
+}
+
+.product-label {
+	display: inline-block;
+}
